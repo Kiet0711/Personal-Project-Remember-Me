@@ -1,0 +1,19 @@
+-- =====================================================
+-- Migration 003 — Create tasks table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Expected columns (per AI_CONTEXT.md):
+--   id, user_id, task_name, description,
+--   start_time, end_time, deadline,
+--   priority, status, category_id,
+--   location, create_at, update_date
+--
+-- Relationship:
+--   Users 1 ---- N Tasks
+--   Categories 1 ---- N Tasks
+--   Tasks 1 ---- N Reminders
+--   Tasks 1 ---- N Notes
+--   Tasks 1 ---- 0..1 RecurringTasks

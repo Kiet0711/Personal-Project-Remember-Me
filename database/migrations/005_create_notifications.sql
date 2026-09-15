@@ -1,0 +1,13 @@
+-- =====================================================
+-- Migration 005 — Create notifications table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Relationship:
+--   Reminders 1 ---- N Notifications
+--   Notifications may reference user_id, task_id, reminder_id
+--
+-- Possible status values:
+--   Pending | Sent | Failed

@@ -1,0 +1,14 @@
+-- =====================================================
+-- Migration 006 — Create notification_settings table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Relationship:
+--   Users 1 ---- N NotificationSettings
+--
+-- Example values:
+--   Zalo    -> enabled
+--   Messenger -> disabled
+--   Desktop -> enabled

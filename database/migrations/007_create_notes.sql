@@ -1,0 +1,10 @@
+-- =====================================================
+-- Migration 007 — Create notes table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Relationship:
+--   Users 1 ---- N Notes
+--   Tasks 1 ---- N Notes (task_id may be NULL for independent notes)

@@ -1,0 +1,14 @@
+-- =====================================================
+-- Migration 001 — Create users table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Expected columns (per AI_CONTEXT.md):
+--   id, name, email, phone_number, password_hash,
+--   timezone, create_date, update_time
+--
+-- Rules:
+--   - NEVER store plain-text passwords
+--   - Use uuid or bigserial for id (to be decided in Phase 3)

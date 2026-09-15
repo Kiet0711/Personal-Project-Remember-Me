@@ -1,0 +1,9 @@
+-- =====================================================
+-- Migration 004 — Create reminders table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Relationship:
+--   Tasks 1 ---- N Reminders

@@ -1,0 +1,15 @@
+-- =====================================================
+-- Migration 008 — Create recurring_tasks table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Relationship:
+--   Tasks 1 ---- 0..1 RecurringTasks
+--
+-- Supports:
+--   Daily / Weekly / Monthly / Yearly
+--   Repeat interval, repeat days
+--   Start / end date
+--   Enable / disable recurrence

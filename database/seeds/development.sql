@@ -1,0 +1,9 @@
+-- =====================================================
+-- Development seed data — Remember Me
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- This file is OPTIONAL and only used in development.
+-- Do not run in production.

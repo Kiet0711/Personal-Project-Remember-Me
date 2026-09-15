@@ -1,0 +1,10 @@
+-- =====================================================
+-- Migration 002 — Create categories table
+-- Phase 3 (PostgreSQL migrations)
+-- =====================================================
+-- Status: structure-only placeholder
+-- Implementation: to be filled in Phase 3 implementation.
+--
+-- Relationship:
+--   Users 1 ---- N Categories
+--   Categories 1 ---- N Tasks
