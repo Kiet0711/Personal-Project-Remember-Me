@@ -1,27 +1,20 @@
 // Package router wires the HTTP routes and middleware for the Remember Me API.
 //
-// Phase 4 — Backend foundation (structure-only).
-// Feature routes (tasks, reminders, etc.) will be added in their respective phases.
+// Phase 6 — Authentication (auth + user routes wired).
 package router
 
 import (
 	"net/http"
-	"os"
+
+	"remember_me/internal/auth"
+	"remember_me/internal/user"
+	"remember_me/middleware"
 
 	"github.com/gin-gonic/gin"
-
-	"remember_me/database"
-	"remember_me/middleware"
 )
 
 // New builds and returns a configured *gin.Engine.
-func New(db *database.DB) *gin.Engine {
-	if os.Getenv("APP_DEBUG") == "false" {
-		gin.SetMode(gin.ReleaseMode)
-	} else {
-		gin.SetMode(gin.DebugMode)
-	}
-
+func New(authHandler *auth.Handler, userHandler *user.Handler) *gin.Engine {
 	r := gin.New()
 
 	// Global middleware
@@ -40,15 +33,22 @@ func New(db *database.DB) *gin.Engine {
 	// API base prefix
 	api := r.Group("/api")
 	{
-		// Feature routes will be mounted here in later phases.
-		// Placeholder so the variable is not unused.
-		api.GET("", func(c *gin.Context) {
-			c.JSON(http.StatusOK, gin.H{"message": "Remember Me API"})
-		})
+		// ── Auth routes (public) ──────────────────────────────────
+		api.POST("/users/register", authHandler.Register)
+		api.POST("/users/login", authHandler.Login)
 
-		// Example (do NOT uncomment yet — Phase 9+):
-		// api.POST("/users/register", authHandler.Register)
-		// api.GET("/tasks", taskHandler.List)
+		// ── Protected routes (require JWT) ──────────────────────────
+		protected := api.Group("")
+		protected.Use(middleware.Auth())
+		{
+			// Auth
+			protected.POST("/users/logout", authHandler.Logout)
+
+			// User profile
+			protected.GET("/users/me", userHandler.GetMe)
+			protected.PUT("/users/me", userHandler.UpdateProfile)
+			protected.PUT("/users/password", userHandler.ChangePassword)
+		}
 	}
 
 	return r

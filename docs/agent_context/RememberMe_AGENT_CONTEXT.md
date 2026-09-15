@@ -606,7 +606,31 @@ Do not over-engineer the application.
 
 Preserve compatibility with future mobile clients.
 
-17. Development Phases
+18. Development Phases Status
+
+| Phase | Status | Notes |
+|---|---|---|
+| 1. Project structure | ✅ Complete | |
+| 2. Database / ERD | ✅ Complete | |
+| 3. PostgreSQL migrations | ✅ Complete | |
+| 4. Backend foundation | ✅ Complete | |
+| 5. Database connection | ✅ Complete | pgxpool wired, ping verified |
+| 6. Authentication | ✅ Complete | register/login/logout + JWT + bcrypt + auth middleware |
+| 7. User | ⬜ Pending | stub exists; full impl in Phase 7 |
+| 8. Category | ⬜ Pending | |
+| 9. Task | ⬜ Pending | |
+| 10. Reminder | ⬜ Pending | |
+| 11. Notification | ⬜ Pending | |
+| 12. Notes | ⬜ Pending | |
+| 13. Recurring Tasks | ⬜ Pending | |
+| 14. Schedule / Conflict | ⬜ Pending | |
+| 15. Calendar | ⬜ Pending | |
+| 16. Frontend integration | ⬜ Pending | |
+| 17. Tauri integration | ⬜ Pending | |
+| 18. Testing | ⬜ Pending | |
+| 19. Future AI / Mobile | ⬜ Pending | |
+
+19. Development Phases
 
 Build in this order:
 
@@ -684,7 +708,7 @@ Mobile - Business logic
 
 until the user explicitly asks for the next phase.
 
-19. Target Initial Structure
+21. Target Initial Structure
 
 After the structure-only phase:
 

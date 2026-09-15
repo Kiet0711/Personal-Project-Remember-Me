@@ -7,6 +7,7 @@ package database
 import (
 	"context"
 	"fmt"
+	"net/url"
 	"time"
 
 	"remember_me/config"
@@ -27,11 +28,11 @@ type DB struct {
 func NewConnection(cfg *config.Config) (*DB, error) {
 	dsn := fmt.Sprintf(
 		"postgres://%s:%s@%s:%s/%s?sslmode=disable",
-		cfg.DBUser,
-		cfg.DBPassword,
+		url.QueryEscape(cfg.DBUser),
+		url.QueryEscape(cfg.DBPassword),
 		cfg.DBHost,
 		cfg.DBPort,
-		cfg.DBName,
+		url.QueryEscape(cfg.DBName),
 	)
 
 	poolConfig, err := pgxpool.ParseConfig(dsn)
